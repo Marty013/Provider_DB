@@ -1,0 +1,30 @@
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe.config
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\bin\Debug\Provider_DB.pdb
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.MainForm.resources
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.Properties.Resources.resources
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.csproj.GenerateResource.Cache
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.exe
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.pdb
+D:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.csprojResolveAssemblyReference.cache
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe.config
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.exe
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.pdb
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.csprojResolveAssemblyReference.cache
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.MainForm.resources
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.Properties.Resources.resources
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\obj\Debug\Provider_DB.csproj.GenerateResource.Cache
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe
+C:\Users\DeadLine_323\Desktop\Provider_DB\Provider_DB\bin\Debug\Provider_DB.pdb
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe.config
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.exe
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.pdb
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\bin\Debug\Provider_DB.pdb
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.csprojResolveAssemblyReference.cache
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.MainForm.resources
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.Properties.Resources.resources
+D:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.csproj.GenerateResource.Cache
+C:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\bin\Debug\Provider_DB.exe.config
+C:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.exe
+C:\Users\DeadLine_323\YandexDisk\[ 7 семестр ]\Построение СУБД\Семестровая работа\Provider_DB\Provider_DB\obj\Debug\Provider_DB.pdb

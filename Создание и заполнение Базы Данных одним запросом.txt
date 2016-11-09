@@ -1,0 +1,232 @@
+
+-- --------------------------------------------------------
+
+--
+-- База данных: PROVIDER_DB
+--
+
+CREATE DATABASE PROVIDER_DB
+GO 
+
+use PROVIDER_DB
+GO
+
+-- --------------------------------------------------------
+
+--
+-- 1. Структура таблицы 'users'
+--
+
+CREATE TABLE users (
+  user_id int PRIMARY KEY IDENTITY (1,1),
+  user_surname varchar(30) NOT NULL,
+  user_name varchar(15) NOT NULL,
+  user_patronymic varchar(30) NOT NULL,
+  user_passport_data int UNIQUE NOT NULL,
+  user_address varchar(50) UNIQUE NOT NULL,
+  user_contact_phone_num int UNIQUE NOT NULL
+)
+
+--
+-- Дамп данных таблицы 'users'
+--
+
+INSERT INTO dbo.users (user_surname, user_name, user_patronymic, user_passport_data, user_address, user_contact_phone_num)
+VALUES
+	('Иванов', 'Иван', 'Иванович', 12341253, 'ЦентральныйСоветская13', 93782456),
+	('Сидоров', 'Олег', 'Михайлович', 2134234, 'ЦентральныйСоветская25', 2363346),
+	('Петров', 'Петр', 'Петрович', 2132134, 'ЦентральныйГагарина21', 324324),
+	('Михайлов', 'Михаил', 'Михайлович', 2235252, 'ЦентральныйГагарина22', 2342314);
+GO
+
+-- --------------------------------------------------------
+
+--
+-- 2. Структура таблицы 'co_workers'
+--
+
+CREATE TABLE co_workers (
+  co_worker_id int PRIMARY KEY IDENTITY (1,1),
+  co_worker_surname varchar(30) NOT NULL,
+  co_worker_name varchar(15) NOT NULL,
+  co_worker_patronymic varchar(30) NOT NULL,
+  co_worker_passport_data int UNIQUE NOT NULL,
+  co_worker_address varchar(50) UNIQUE NOT NULL,
+  co_worker_contact_phone_num int UNIQUE NOT NULL,
+  post varchar(50) NOT NULL,
+  salary int NOT NULL
+)
+
+--
+-- Дамп данных таблицы 'co_workers'
+--
+
+INSERT INTO dbo.co_workers (co_worker_surname, co_worker_name, co_worker_patronymic, co_worker_passport_data, co_worker_address, co_worker_contact_phone_num, post, salary)
+VALUES
+	('Иванов', 'Иван', 'Иванович', 12312312, '123123123', 123123123, 'работник', 15000),
+	('Петров', 'Петр', 'Петрович', 52325, '325345', 35345, 'работник', 15000);
+GO
+
+-- --------------------------------------------------------
+
+--
+-- 3. Структура таблицы 'coverage_areas'
+--
+
+CREATE TABLE coverage_areas (
+  coverage_area_id int PRIMARY KEY IDENTITY (1,1),
+  district varchar(30) NOT NULL,
+  street varchar(30) NOT NULL,
+  num_house int NOT NULL
+)
+
+--
+-- Дамп данных таблицы 'coverage_areas'
+--
+
+INSERT INTO dbo.coverage_areas (district, street, num_house)
+VALUES
+	('Центральный', 'Советская', 5),
+	('Центральный', 'Советская', 8),
+	('Центральный', 'Советская', 10),
+	('Центральный', 'Бакинская', 18),
+	('Центральный', 'Бакинская', 18),
+	('Центральный', 'Бакинская', 28),
+	('Центральный', 'Бакинская', 33),
+	('Джержинский', 'Танкистов', 38),
+	('Джержинский', 'Танкистов', 41),
+	('Центральный', 'Гагарина', 21);
+GO
+
+-- --------------------------------------------------------
+
+--
+-- 4. Структура таблицы 'rates'
+--
+
+CREATE TABLE rates (
+  rate_id int PRIMARY KEY IDENTITY (1,1),
+  name_rate varchar(15) UNIQUE NOT NULL,
+  description varchar(50) NOT NULL,
+  validity date NOT NULL,
+  cost int NOT NULL,
+  notes varchar(30) NOT NULL
+)
+
+--
+-- Дамп данных таблицы 'rates'
+--
+
+INSERT INTO dbo.rates (name_rate, description, validity, cost, notes)
+VALUES
+	('Максимальный', 'Максимум скорости', '2000-01-01', 1200, 'примечание1'),
+	('Экономный', 'Минимум оплаты', '2021-07-05', 300, 'примечание2'),
+	('Первый', 'Самы первый', '2014-07-05', 707, 'примечание3'),
+	('Лучший', 'Высокая скорость по маленькой цене', '2014-07-07', 500, 'Примечание4');
+GO
+
+-- --------------------------------------------------------
+
+--
+-- 5. Структура таблицы 'agreements'
+--
+
+CREATE TABLE agreements (
+  agreement_id int PRIMARY KEY IDENTITY (1,1),
+  id_user int UNIQUE NOT NULL FOREIGN KEY REFERENCES users(user_id) ON DELETE CASCADE,
+  balance int NOT NULL,
+  login varchar(15) UNIQUE NOT NULL,
+  password varchar(15)NOT NULL,
+  id_coverage_area int NOT NULL FOREIGN KEY REFERENCES coverage_areas(coverage_area_id) ON DELETE CASCADE,
+  num_apartments int UNIQUE NOT NULL,
+  date_connection date NOT NULL,
+  id_co_worker int NOT NULL FOREIGN KEY REFERENCES co_workers(co_worker_id) ON DELETE CASCADE,
+  id_rate int NOT NULL FOREIGN KEY REFERENCES rates(rate_id) ON DELETE CASCADE
+)
+
+--
+-- Дамп данных таблицы 'agreements'
+--
+
+INSERT INTO dbo.agreements (id_user, balance, login, password, id_coverage_area, num_apartments, date_connection, id_co_worker, id_rate)
+VALUES
+	(1, 300, 'Login1', 'Password1', 6, 18, '2043-01-01', 1, 3),
+	(2, 600, 'Login2', 'Password2', 9, 22, '2043-01-01', 1, 4),
+	(3, 999, 'Login3', 'Password3', 9, 36, '2033-01-01', 2, 4);
+GO
+
+-- --------------------------------------------------------
+
+--
+-- 6. Структура таблицы 'transactions'
+--
+
+CREATE TABLE transactions (
+  transaction_id int PRIMARY KEY IDENTITY (1,1),
+  id_agreement int NOT NULL FOREIGN KEY REFERENCES agreements(agreement_id) ON DELETE CASCADE,
+  operation_type varchar(30) NOT NULL,
+  transaction_amount int NOT NULL,
+  transaction_date date NOT NULL,
+)
+
+--
+-- Дамп данных таблицы 'transactions'
+--
+
+INSERT INTO dbo.transactions (id_agreement, operation_type, transaction_amount, transaction_date)
+VALUES
+	(2, 'фывфывВФВ', 8, '2000-01-01'),
+	(2, 'ФВфвфВФВ', 8, '2000-01-01'),
+	(2, 'ФЫВКЦУКЦУК', 8, '2000-01-01'),
+	(2, 'ЦЙКЦУКЙ', 8, '2000-01-01'),
+	(1, 'ЦЙЫВАЫВФА', 8, '2000-01-01'),
+	(1, 'ЦЙЫВАЫВФА', 8, '2000-01-01'),
+	(1, 'ЦЙЫВАЫВФА', 8, '2000-01-01'),
+	(2, 'ываыва', 0, '2000-01-01');
+GO
+
+-- --------------------------------------------------------
+
+--
+-- Реализуем каскадное удаление в таблицах (не понадобились)
+--
+
+-- при удалении пользователя
+CREATE TRIGGER auto_del_agreements_1 ON users
+AFTER DELETE AS
+	DELETE FROM agreements WHERE (agreements.id_user in (SELECT user_id FROM deleted))
+GO
+
+-- при удалении зоны покрытия
+CREATE TRIGGER auto_del_agreements_2 ON coverage_areas
+AFTER DELETE AS
+	DELETE FROM agreements WHERE (agreements.id_coverage_area in (SELECT coverage_area_id FROM deleted))
+GO
+
+-- при удалении сотрудника
+CREATE TRIGGER auto_del_agreements_3 ON co_workers
+AFTER DELETE AS
+	DELETE FROM agreements WHERE (agreements.id_co_worker in (SELECT co_worker_id FROM deleted))
+GO
+
+-- при удалении тарифного плана
+CREATE TRIGGER auto_del_agreements_3 ON rates
+AFTER DELETE AS
+	DELETE FROM agreements WHERE (agreements.id_rate in (SELECT rate_id FROM deleted))
+GO
+
+-- при удалении договора
+CREATE TRIGGER auto_del_transactions ON agreements
+AFTER DELETE AS
+	DELETE FROM transactions WHERE (transactions.id_agreement in (SELECT agreement_id FROM deleted))
+GO
+
+
+
+
+
+
+
+
+
+
